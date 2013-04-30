@@ -10,13 +10,13 @@ Gem::Specification.new do |s|
   s.email         = ['florian@polarblau.com']
   s.homepage      = 'https://github.com/polarblau/rails-html-helpers'
   s.summary       = 'Collection of HTML helpers'
-  s.description   = 'A bunch of frequently used HTML helpes for Rails apps.'
+  s.description   = 'A bunch of frequently used HTML helpers for Rails apps.'
   s.license       = 'MIT'
 
   s.files         = `git ls-files app lib`.split('\n')
   s.platform      = Gem::Platform::RUBY
   s.require_paths = ['lib']
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.test_files    = `git ls-files -- spec/*`.split("\n")
   s.rubyforge_project = '[none]'
 
   s.add_dependency             'railties',      '>= 3.2'
