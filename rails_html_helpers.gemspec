@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description   = 'A bunch of frequently used HTML helpers for Rails apps.'
   s.license       = 'MIT'
 
-  s.files         = `git ls-files app lib`.split('\n')
+  s.files         = `git ls-files -- lib/*`.split("\n")
   s.platform      = Gem::Platform::RUBY
   s.require_paths = ['lib']
   s.test_files    = `git ls-files -- spec/*`.split("\n")
