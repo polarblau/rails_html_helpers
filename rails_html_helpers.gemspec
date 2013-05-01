@@ -21,4 +21,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency             'railties',      '>= 3.2'
   s.add_development_dependency 'rspec',         '~> 2.13'
+  s.add_development_dependency 'actionpack',    '>= 3.2'
 end

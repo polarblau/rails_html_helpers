@@ -1,1 +1,1 @@
-require "rails_html_helpers/rails"
+require "rails_html_helpers/rails" if defined?(Rails)

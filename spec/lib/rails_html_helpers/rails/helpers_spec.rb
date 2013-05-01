@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-class DummyContext; end
+class DummyContext < ActionView::Base; end
 
 describe "RailsHTMLHelpers::Rails::Helpers" do
 
@@ -63,6 +63,32 @@ describe "RailsHTMLHelpers::Rails::Helpers" do
   end
 
   describe '#html_tag' do
+    it 'should produce a set of conditional tags' do
+      helpers.html_tag.should == <<-EOS
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+      EOS
+    end
+
+    it 'should assign attributes' do
+      helpers.html_tag(:foo => 'bar').should == <<-EOS
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" foo="bar"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" foo="bar"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" foo="bar"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" foo="bar"> <!--<![endif]-->
+      EOS
+    end
+
+    it 'should merge classes' do
+      helpers.html_tag(:class => 'foo').should == <<-EOS
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 foo"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 foo"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9 foo"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js foo"> <!--<![endif]-->
+      EOS
+    end
 
   end
 end
