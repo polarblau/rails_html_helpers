@@ -7,7 +7,7 @@ module RailsHTMLHelpers
       # @param [Mixed]
       # @param [String] Separator
       # @return [String] Title
-      def title(t, separator = " | ")
+      def title(t = nil, separator = " | ")
         @title ||= []
         @title << t
         @title.flatten.compact.join(separator)
