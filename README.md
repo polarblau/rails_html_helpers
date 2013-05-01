@@ -1,8 +1,8 @@
-# Rails HTML Helpers
+# Rails HTML Helpers [![Build Status](https://travis-ci.org/polarblau/rails_html_helpers.png?branch=master)](https://travis-ci.org/polarblau/rails_html_helpers)
 
 A bunch of frequently used HTML helpers for Rails apps.
 
-## Installation 
+## Installation
 
 Run
 
