@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version       = Rails::Html::Helpers::VERSION
   s.authors       = ['Florian Plank']
   s.email         = ['florian@polarblau.com']
-  s.homepage      = 'https://github.com/polarblau/rails-html-helpers'
+  s.homepage      = 'https://github.com/polarblau/rails_html_helpers'
   s.summary       = 'Collection of HTML helpers'
   s.description   = 'A bunch of frequently used HTML helpers for Rails apps.'
   s.license       = 'MIT'
